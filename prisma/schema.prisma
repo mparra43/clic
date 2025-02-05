@@ -13,55 +13,125 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role {
-  Organizador
-  Asesor
-  Aliado
-  Cliente
-  Administrador
-}
+// enum Role {
+//   Organizador
+//   Asesor
+//   Aliado
+//   Cliente
+//   Administrador
+// }
 
 enum TypeEvent {
   Alianza
   Bienestar
 }
 
-enum Advice {
-  Legal
-  Profesional
+// enum Advice {
+//   Legal
+//   Profesional
+// }
+
+model Account {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  user      User?
+  advices   Advice[]
+  ally      ally?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+}
+
+model Advice {
+  id          Int      @id @default(autoincrement())
+  advicer     Account? @relation(fields: [advicerId], references: [id], onDelete: Cascade)
+  advicerId   Int?     @unique
+  affair      String
+  affiliate   User?    @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+  affiliateId Int?     @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AdviceType {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ally {
+  id        Int      @id @default(autoincrement())
+  company   String
+  sector    String
+  user      Account? @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int?     @unique
+  events    Event[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DocumentType {
+  id        Int      @id @default(autoincrement())
+  name      String
+  user      User?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Event {
+  id               Int             @id @default(autoincrement())
+  name             String          @unique
+  description      String
+  host             ally?           @relation(fields: [hostId], references: [id], onDelete: Cascade)
+  hostId           Int?            @unique
+  place            String
+  maxCapacity      Int
+  currentAttendees Int
+  eventType        EventType?      @relation(fields: [eventTypeId], references: [id], onDelete: Cascade)
+  eventTypeId      Int?            @unique
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  attendees        EventAttendee[]
+}
+
+model EventAttendee {
+  id           Int      @id @default(autoincrement())
+  event        Event    @relation(fields: [eventId], references: [id])
+  eventId      Int 
+  registeredAt DateTime @default(now())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model EventType {
+  id        Int      @id @default(autoincrement())
+  name      String
+  Event     Event?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Role {
+  id        Int      @id @default(autoincrement())
+  name      String
+  user      User?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model User {
-  id                String     @id @default(uuid())
-  name              String
-  email             String     @unique
-  password          String
-  roles             Role[]     @default([])
-  AdvisoryAsAdviser Advisory[] @relation("AdviserRelation")
-  AdvisoryAsClient  Advisory[] @relation("ClientRelation")
-}
-
-model Company {
-  id   String @id @default(uuid())
-  name String
-}
-
-model Category {
-  id   String @id @default(uuid())
-  name String @unique
-}
-
-model Advisory {
-  id        String @id @default(uuid())
-  type      Advice
-  adviser   User   @relation("AdviserRelation", fields: [adviserId], references: [id])
-  adviserId String
-  client    User   @relation("ClientRelation", fields: [clientId], references: [id])
-  clientId  String
-}
-
-model Events {
-  id   String @id @default(uuid())
-  name String @unique
-  type TypeEvent
+  id             Int           @id @default(autoincrement())
+  name           String
+  account        Account?      @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  accountId      Int?          @unique
+  advices        Advice[]
+  documentType   DocumentType? @relation(fields: [documentTypeId], references: [id], onDelete: Cascade)
+  documentTypeId Int?          @unique
+  role           Role?         @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  roleId         Int?          @unique
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
 }
