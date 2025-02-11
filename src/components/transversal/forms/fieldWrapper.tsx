@@ -1,9 +1,6 @@
 import clsx from 'clsx'
 import { ErrorOption } from 'react-hook-form'
-const variants = {
-  left: '',
-  bottom: '',
-}
+
 
 export interface FieldWrapperProps {
   children: React.ReactNode
@@ -21,7 +18,7 @@ export interface FieldWrapperProps {
   >
   leftIcon?: React.ReactElement
   numberCharacters?: number
-  variant?: keyof typeof variants
+  
 }
 
 export type FieldWrapperPassThroughProps = Pick<
