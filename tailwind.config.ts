@@ -8,6 +8,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ubuntu: ['var(--font-ubuntu)'],
+        kreon: ['var(--font-kreon)'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -48,10 +48,31 @@ export interface LinkImagen extends Imagen {
 export interface Page {
     article: {
         className: string
-        container: {}
+        // container: {}
     },
     route: Route
 }
+
+export interface NavItem {
+    text: string;
+    path: string;
+}
+
+
+export interface SliderItem {
+    src: string;
+    alt: string;
+}
+
+export interface Service {
+    label: string;
+    icon: string;
+    path: string;
+}
+
+
+
+
 
 export interface TextLink {
     paragraph?: string;
@@ -77,18 +98,18 @@ export interface Article {
 }
 
 export interface CarouselData {
-    desktop: Array<Array<JSX.Element>> ;
+    desktop: Array<Array<JSX.Element>>;
     mobile: Array<Array<JSX.Element>>
 }
 
 
 export interface HandleSearchParameters {
-    term: string, 
-    selectedOption?: boolean, 
+    term: string,
+    selectedOption?: boolean,
     filterSearch?: boolean
 }
 
 export interface ShowInputPassword {
-   password:boolean;
-   passwordConfirmation:boolean;
+    password: boolean;
+    passwordConfirmation: boolean;
 }

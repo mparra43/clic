@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import '@/styles/globals.css'
-import { Transversal } from "@/components/transversal/sections";
+
 
 
 export const metadata: Metadata = {
@@ -16,9 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Transversal.Header/>
         {children}
-        <Transversal.Footer/>
       </body>
     </html>
   );

@@ -38,11 +38,67 @@ input[type="text"]::before {
   background: white !important;
 }
 
+@font-face {
+  font-family: FontAwesome6ProRegular;
+  src: url(./fonts/FontAwesome6ProRegular400.otf);
+}
+
+@font-face {
+  font-family: FontAwesome6ProSolid;
+  src: url(./fonts/FontAwesome6ProSolid900.otf);
+}
+
+@font-face {
+  font-family: FontAwesome6ProLight;
+  src: url(./fonts/FontAwesome6ProLight300.otf);
+}
+
+
+
+
+/* icons  */
+
+.arrow-right-to-bracket::before {
+  font-family: FontAwesome6ProLight !important;
+  content: '\f090';
+}
+
+.balance-scale::before {
+  font-family: FontAwesome6ProLight !important;
+  content: '\f24e';
+}
+
+.bars::before {
+  font-family: FontAwesome6ProRegular !important;
+  content: '\f0c9';
+}
+
+.chart-line-up::before {
+  font-family: FontAwesome6ProLight !important;
+  content: '\f201';
+}
+
+.circle-user::before {
+  font-family: FontAwesome6ProLight !important;
+  content: '\f2bd';
+}
+
+.share-alt::before {
+  font-family:FontAwesome6ProSolid !important;
+  content: '\f1e0';
+}
+
+.users::before {
+  font-family:FontAwesome6ProSolid !important;
+  content: '\f0c0';
+}
+
+
+
+
 /* input:focus {
   border: 1px solid rgb(16 114 181 / var(--tw-border-opacity));
 } */
-
-/* icons  */
 
 .chevron-left::before {
   font-family: FontAwesome6ProRegular !important;
@@ -78,27 +134,13 @@ input[type="text"]::before {
 }
 
 
-@font-face {
-  font-family: FontAwesome6ProRegular;
-  src: url(./fonts/FontAwesome6ProRegular400.otf);
-}
-
-@font-face {
-  font-family: FontAwesome6ProSolid;
-  src: url(./fonts/FontAwesome6ProSolid900.otf);
-}
-
-@font-face {
-  font-family: FontAwesome6ProLight;
-  src: url(./fonts/FontAwesome6ProLight300.otf);
-}
 
 .location-dot::before {
   font-family: FontAwesome6ProRegular !important;
   content: '\f3c5';
 }
 
-.menu::before {
+.bars::before {
   font-family: FontAwesome6ProRegular !important;
   content: '\f0c9';
 }

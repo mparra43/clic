@@ -1,4 +1,4 @@
-
+import clsx from "clsx";
 
 interface ButtonProps {
     className: string
@@ -11,20 +11,21 @@ interface ButtonProps {
     type?: 'button' | 'submit' | 'reset' | undefined
     title?: string;
     tooltipPosition?: 'top' | 'right' | 'bottom' | 'left'
+    labelStyles?: string
     textColor?: string
 }
-export const  Button =({ className, borderColor, disabled, iconLeft, iconRight, label, onClick,textColor, title, tooltipPosition, type }: ButtonProps) =>{
+export const  Button =({ className, borderColor, disabled, iconLeft, iconRight, label, labelStyles, onClick,textColor, title, tooltipPosition, type }: ButtonProps) =>{
     return (
         <button
-            className={`d-flex  btn btn-${borderColor} rounded ${className}  px-3`}
+            className={clsx(className, borderColor, 'flex btn rounded px-3' )}
             data-toggle='tooltip'
             data-placement={tooltipPosition}
             disabled={disabled}
             onClick={onClick} type={type ? type : 'button'}
             title={title}>
             {iconLeft && iconLeft}
-            <label className={`text-${textColor ? textColor :borderColor}  mb-0`}>{label}</label>
-            {iconRight && <i className={`font-bold ${iconRight} ml-2 text-${textColor ? textColor :borderColor}`}></i>}
+            <label className={clsx(labelStyles, textColor, 'mb-0')}>{label}</label>
+            {iconRight && <i className={clsx(iconRight, textColor ? textColor :borderColor )}></i>}
         </button>
     );
 }

@@ -29,24 +29,8 @@ export interface FilterParams {
 
 }
 
-export interface CompanyRegister {
-    documentType: string;
-    documentNumber: string;
-    email?: string;
-    password?: string;
-    passwordConfirmation?: string;
-    termsAndConditions?:boolean;
-    dataProcessingPolicy?: string;
-    companyName?: string;
-    economicActivity?: string;
-    phone?: string;
-    city?: string;
-    address?: string;
-    names?: string;
-    surname?: string;
-    documentTypeUser?: string;
-    documentNumberUser?: string;
-    yearOfBirth?: string;
-    position?: string;
-    phoneUser?: string;
+export interface Event {
+    title: string;
+    description: string;
+    image: string;
 }
