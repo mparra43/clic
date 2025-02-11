@@ -9,7 +9,7 @@ export default function Home() {
 
   const { sliderItems, services, event } = homePage;
 
-  const { grups, pagination } = splitArraysEquals(event, 4);
+  const { grups } = splitArraysEquals(event, 4);
 
   const events = grups.map((item) => item.map(({ title, description, image }: Event, index: number) => (
     <Transversal.Card key={index} file='events' title={title} description={description} image={image} />

@@ -13,3 +13,11 @@ export const splitArraysEquals = (array: any[] = [], size: number): MatrixDivisi
     return { grups, pagination }
   }
   
+
+  export const normalizeText = (text: string) => {
+    return text?.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  export const filterOptionsToSelect = (data: any[], term: string, propertyCompare: string) => {
+    return data.filter(item => normalizeText(item[propertyCompare])?.includes(term?.toLowerCase()))
+  }

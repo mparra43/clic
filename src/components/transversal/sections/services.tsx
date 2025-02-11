@@ -13,7 +13,7 @@ export const Services = ({ services }: ServicesProps) => {
 
     return (
         <div className='w-full h-52 mt-14'>
-            <h2 className='text-xl sm:text-3xl text-center font-kreon text-slate-900'>Nuestros servicios </h2>
+            <h2 className='text-2xl md:text-3xl font-bold text-center font-ubuntu'>Nuestros servicios </h2>
             <div className=''>
                 <div className='grid grid-cols-3 justify-items-center mt-12'>
                     {services.map(({ path, label, icon }, index) => (

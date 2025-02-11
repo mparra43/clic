@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { ForwardedRef, forwardRef, Suspense, useId, useState } from 'react';
-import { Control, Controller, Path, RegisterOptions } from 'react-hook-form';
+import { ForwardedRef, forwardRef, Suspense, useId } from 'react';
+import { Control, Controller, Path } from 'react-hook-form';
 import { errorInputClasses, focusInputClasses, inputClasses } from './classes';
 import { FieldWrapper, FieldWrapperPassThroughProps } from './fieldWrapper';
 import { Option } from '@/interfaces';

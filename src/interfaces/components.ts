@@ -1,4 +1,5 @@
 import { TypeButton } from "@/enum";
+import { JSX } from "react";
 
 export interface StyleSectionForm {
     article: string,
