@@ -80,7 +80,22 @@ input[type="text"]::before {
 
 .circle-user::before {
   font-family: FontAwesome6ProLight !important;
-  content: '\f2bd';
+  content:'\f2bd';
+}
+
+.facebook::before {
+  font-family: FontAwesome6ProLight !important;
+  content:'\f09a';
+}
+
+.instagram::before {
+  font-family:FontAwesome6ProLight !important;
+  content:'\f16d';
+}
+
+.spa::before {
+  font-family:FontAwesome6ProLight !important;
+  content:'\f5bb';
 }
 
 .share-alt::before {
@@ -88,8 +103,12 @@ input[type="text"]::before {
   content: '\f1e0';
 }
 
+.tiktok::before {
+  font-family:FontAwesome6ProLight !important;
+  content:'\e07b';
+}
 .users::before {
-  font-family:FontAwesome6ProSolid !important;
+  font-family:FontAwesome6ProLight !important;
   content: '\f0c0';
 }
 

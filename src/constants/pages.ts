@@ -58,7 +58,13 @@ export const homePage = {
       description: "Encuentra sentido en tus actividades diarias y motívate para alcanzar tus objetivos personales y laborales.",
       image: "event-2.jpg",
     }
-  ]
+  ],
+
+  alliesCampaign: {
+    title:'Nuestros Aliados',
+    image:'/images/allies/image.jpg'
+  }
+  
 
 
 

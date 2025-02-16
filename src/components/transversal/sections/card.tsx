@@ -13,9 +13,9 @@ export interface CardProps {
 export const Card = ({ description, file, title, image }: CardProps) => {
 
     return (
-        <Link className='w-full rounded overflow-hidden shadow-lg bg-white' href=''>
+        <Link className='w-full overflow-hidden shadow-lg bg-white rounded-xl' href=''>
             <Image
-                className='w-full h-48'
+                className='w-full h-40 lg:h-48 rounded-t-xl'
                 data-fetchpriority='high'
                 loading='lazy'
                 src={`/images/${file}/${image}`}
@@ -23,8 +23,8 @@ export const Card = ({ description, file, title, image }: CardProps) => {
                 width={100}
                 height={100} />
             <div className='p-3 '>
-                <h4 className='font-kreon text-md font-bold'>{title}</h4>
-                <p className='text-sm'>{description}</p>
+                <h4 className='font-kreon text-sm lg:text-md font-bold'>{title}</h4>
+                <p className='text-xs lg:text-sm'>{description}</p>
             </div>
         </Link>
     );

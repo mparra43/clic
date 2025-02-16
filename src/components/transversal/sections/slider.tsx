@@ -36,7 +36,7 @@ export const Slider = ({ className, items, file, slideInterval = 8000 }: SliderP
             {items.map(({ src, alt }, index) => (
                 <div  key={index} className='h-full py-4 px-2 sm:p-0'>
                     <div className='w-full' data-testid='itemSliderDesktop'>
-                        <Image  className='w-full h-full object-cover object-center'  data-fetchpriority='high' loading='lazy' src={`/images/${file}/${src}`} alt={alt} width={600} height={100} />
+                        <Image  className='w-full h-60 md:h-full object-cover object-center'  data-fetchpriority='high' loading='lazy' src={`/images/${file}/${src}`} alt={alt} width={600} height={100} />
                     </div>
                 </div>
             ))}

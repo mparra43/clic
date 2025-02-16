@@ -5,6 +5,7 @@ import { Carousel, } from 'flowbite-react';
 import { themeSlider } from '@/lib/theme';
 import { Button, CarouselData, themeSliderProps } from '@/interfaces';
 import { Suspense, useState, useEffect, JSX } from 'react';
+import { Item } from '../../../interfaces/components';
 
 export interface CarouselWhitGridProps {
     button?: Button
@@ -15,6 +16,7 @@ export interface CarouselWhitGridProps {
     classNameMobile?: string
     classNameSection?: string
     items: Array<Array<JSX.Element>>
+    itemsMobile: Array<any>
     indicators?: boolean;
     // theme: themeSliderProps;
     title?: string;
@@ -45,7 +47,7 @@ export const CarouselWhitGrid = ({
     carouselClassDesktop = 'h-[28rem]',
     carouselClassMobile = 'h-[20rem]',
     classNameDesktop = 'w-5/6 grid grid-rows-1 grid-cols-4 gap-4 mx-auto',
-    classNameMobile = 'w-11/12 grid grid-rows-2 grid-cols-2 gap-2 mx-auto',
+    classNameMobile = 'w-full grid grid-cols-1 gap-2 mx-auto mt-6',
     classNameSection,
     button,
     items,
@@ -60,11 +62,14 @@ export const CarouselWhitGrid = ({
     return (
         <section className={clsx(classNameSection)} data-testid='carousel'>
             <div className='w-full md:w-[33.3rem] mx-auto '>
-                <h3 className='text-xl md:text-2xl text-center font-normal px-12 md:px-0 font-ubuntu '>{subtitle}</h3>
+                <h3 className='text-2xl/6 md:text-2xl text-center font-normal md:px-12  font-ubuntu '>{subtitle}</h3>
                 <h2 className='text-2xl md:text-3xl font-bold text-center font-ubuntu'>{title}</h2>
             </div>
             <Carousel className={clsx('hidden md:block', carouselClassDesktop)} theme={themeSlider(theme)} indicators={indicators} slideInterval={slideInterval && slideInterval} data-testid='carouselDesktop' >
                 {items?.map((item, index) => (<div className={clsx(classNameDesktop)} key={index}>{item}</div>))}
+            </Carousel>
+            <Carousel className={clsx('block md:hidden', carouselClassMobile, classNameMobile)} theme={themeSlider(theme)} indicators={false} slideInterval={slideInterval && slideInterval} data-testid='carouselMobile' >
+                {items?.map((item) => item)}
             </Carousel>
 
         </section>
