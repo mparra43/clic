@@ -71,10 +71,6 @@ export interface Service {
     path: string;
 }
 
-
-
-
-
 export interface TextLink {
     paragraph?: string;
     textLink: string;

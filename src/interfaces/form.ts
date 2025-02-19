@@ -34,7 +34,7 @@ export interface Form {
   companyLogo?: string
   button: Button
   inputs: Input[];
-  paragraph: string
+  paragraph?: string
   paragraphStyles?: string;
   title: string
   titleStyles?: string;

@@ -61,7 +61,7 @@ export const CarouselWhitGrid = ({
 
     return (
         <section className={clsx(classNameSection)} data-testid='carousel'>
-            <div className='w-full md:w-[33.3rem] mx-auto '>
+            <div className='w-full md:w-[38rem] mx-auto '>
                 <h3 className='text-2xl/6 md:text-2xl text-center font-normal md:px-12  font-ubuntu '>{subtitle}</h3>
                 <h2 className='text-2xl md:text-3xl font-bold text-center font-ubuntu'>{title}</h2>
             </div>

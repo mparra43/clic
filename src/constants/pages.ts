@@ -12,9 +12,9 @@ export const homePage = {
     { src: '3.png', alt: 'Trabajo con propósito' }
   ],
   services: [
-    { label: 'Asesoría Jurídica ', icon: 'balance-scale', path: '' },
-    { label: 'Bienestar ', icon: 'users', path: '' },
-    { label: 'Crecimiento profesional', icon: 'chart-line-up', path: '' }
+    { label: 'Asesoría Jurídica ', icon: 'balance-scale', path: '/advice' },
+    { label: 'Bienestar ', icon: 'users', path: '/welfare' },
+    { label: 'Crecimiento profesional', icon: 'chart-line-up', path: '/events' }
   ],
 
   event: [

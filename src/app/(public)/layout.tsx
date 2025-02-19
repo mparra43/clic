@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Transversal } from "@/components/transversal/sections";
 import { Button, GroupMainLogo } from "@/components/transversal/shared";
 
@@ -16,11 +17,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className='grid grid-cols-2 md:grid-cols-3 items-center'
         firstElement={<GroupMainLogo className='flex ml-6' icon='bars text-white text-2xl block md:hidden' /> }
         lastElement={
+          <Link href='/login'>
           <Button className='md:bg-white text-green-500 items-end md:py-2 m-4'
             labelStyles='font-ubuntu hidden md:block'
             iconRight='circle-user text-white text-3xl block md:hidden'
             label='iniciar sesión'
-            iconLeft={<i className='hidden md:block arrow-right-to-bracket mr-2' />} />}>
+            iconLeft={<i className='hidden md:block arrow-right-to-bracket mr-2' />} /> 
+          </Link>
+          }>
         <Transversal.Nav className='justify-center hidden md:flex' classItem='text-white' itemsMenu={itemsMenu} />
       </Transversal.Header >
       <Transversal.Nav className='w-64 bg-white absolute block md:hidden z-10 shadow-md rounded-br-sm' classItem='text-green-500 p-4' itemsMenu={itemsMenu} mobile={true} />
