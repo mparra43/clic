@@ -5,15 +5,9 @@ import { splitArraysEquals } from '@/lib';
 import Image from 'next/image';
 
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
+export default async function Page() {
 
-export default async function Page({ params }: Props) {
-
-  const { alliesCampaign, sliderItems, services, event } = homePage;
+  const {  event } = homePage;
 
   const { grups } = splitArraysEquals(event, 4);
 

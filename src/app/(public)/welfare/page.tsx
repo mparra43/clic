@@ -6,13 +6,9 @@ import { splitArraysEquals } from '@/lib';
 import Image from 'next/image';
 
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
 
-export default async function Page({ params }: Props) {
+
+export default async function Page() {
 
 
 
